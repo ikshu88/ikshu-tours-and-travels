@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ikshu Tours & Travels creates unforgettable private journeys through Sri Lanka." />
+  <title>Ikshu Tours & Travels | Sri Lanka Tours</title>
+  <style>
+    :root{
+      --emerald:#0B3D35;
+      --teal:#087E8B;
+      --gold:#D4A84F;
+      --sand:#F4E9D3;
+      --ivory:#FFFDF7;
+      --charcoal:#17201E;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .header{
+      position:sticky; top:0; background:rgba(11,61,53,.9); backdrop-filter: blur(10px);
+      color:#fff; display:flex; justify-content:space-between; align-items:center;
+      padding:18px 7vw; z-index:50;
+    }
+    .brand{font-weight:700; letter-spacing: 2px; }
+    .nav{display:flex; gap:22px; align-items:center; font-size:14px;}
+    .nav a{opacity:.9}
+    .nav .button{
+      background: var(--gold); color: var(--charcoal); padding:12px 18px; border-radius:999px; font-weight:700;
+    }
+    .hero{
+      min-height:90vh; display:grid; grid-template-columns:1.1fr .9fr; align-items:center;
+      background: linear-gradient(120deg, rgba(11,61,53,.86), rgba(11,61,53,.7)), 
+                  url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color:white; padding: 80px 7vw;
+    }
+    .eyebrow{
+      display:inline-block; letter-spacing: .22em; font-size:11px; font-weight:700; color:var(--gold); margin-bottom:18px;
+      text-transform: uppercase;
+    }
+    h1{
+      font-size: clamp(3rem, 7vw, 6rem); line-height: .95; margin:0 0 20px; font-family: Georgia, serif;
+    }
+    h1 span{color:var(--gold)}
+    .hero p{max-width:540px; font-size:1.08rem; color: rgba(255,255,255,.9);}
+    .hero-actions{display:flex; gap:18px; align-items:center; margin-top:28px; flex-wrap:wrap;}
+    .button{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:999px; padding:16px 26px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px;
+    }
+    .primary{background:var(--gold); color:var(--charcoal)}
+    .secondary{border:1px solid rgba(255,255,255,.4); color:white}
+    .hero-card{
+      background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); padding:24px; border-radius:20px; backdrop-filter: blur(8px);
+      max-width:420px; margin-left:auto; box-shadow: 0 24px 60px rgba(0,0,0,.18);
+    }
+    .mini-title{font-size:11px; letter-spacing:.22em; color:var(--gold); text-transform:uppercase}
+    .hero-card h3{font-size:2rem; margin:12px 0 8px; font-family:Georgia, serif;}
+    .hero-card ul{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px; color:rgba(255,255,255,.92);}
+    .hero-card li::before{content:"•"; color:var(--gold); margin-right:8px;}
+    section{padding:90px 7vw}
+    .section-head{display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:26px;}
+    h2{font-size: clamp(2.2rem, 3vw, 3.1rem); margin:0; font-family:Georgia, serif; color:var(--emerald);}
+    .muted{color:#5e706b; max-width:520px}
+    .destinations{
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+    }
+    .card{
+      background:white; border-radius:22px; overflow:hidden; box-shadow:0 16px 32px rgba(0,0,0,.06); border:1px solid rgba(0,0,0,.04);
+    }
+    .card img{width:100%; height:260px; object-fit:cover;}
+    .card-body{padding:22px;}
+    .tag{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); font-weight:700;}
+    .card h3{margin:12px 0 10px; font-size:2rem; font-family:Georgia, serif; color:var(--emerald);}
+    .card p{margin:0 0 14px; color:#4f5d59;}
+    .link{font-weight:700; color:var(--emerald);}
+    .tours{display:grid; grid-template-columns:1fr; gap:18px; margin-top:24px;}
+    .tour{
+      display:grid; grid-template-columns:120px 1fr auto; gap:18px; align-items:center;
+      background:#f7f3eb; border-radius:18px; padding:30px 22px; border:1px solid rgba(11,61,53,.06);
+    }
+    .tour-no{font-size:2rem; font-family:Georgia, serif; color:var(--gold);}
+    .tour h3{margin:0 0 8px; font-size:1.8rem; color:var(--emerald); font-family:Georgia, serif;}
+    .tour p{margin:0; color:#4a5d5a;}
+    .tour .button{background:var(--emerald); color:#fff; padding:14px 18px; font-size:11px}
+    .about{display:grid; grid-template-columns:1.1fr 1fr; gap:50px; align-items:center; background:#f8f3ea; border-radius:28px;}
+    .about img{width:100%; height:100%; min-height:500px; object-fit:cover; border-radius:28px 0 0 28px;}
+    .about-box{padding:36px 40px 36px 0;}
+    .about-box p{color:#4f5d59; font-size:1.02rem;}
+    .stats{display:flex; gap:22px; flex-wrap:wrap; margin-top:28px;}
+    .stat{background:white; padding:18px 20px; border-radius:14px; min-width:120px; box-shadow:0 10px 22px rgba(0,0,0,.04);}
+    .stat strong{display:block; font-size:1.8rem; color:var(--emerald); font-family:Georgia, serif;}
+    .contact{
+      background: var(--emerald); color:white;
+      border-radius:28px; padding:40px 34px; display:grid; grid-template-columns:1fr 1fr; gap:30px;
+    }
+    .contact h2{color:white}
+    .contact p{color:rgba(255,255,255,.84)}
+    .contact-list{display:grid; gap:10px; margin-top:20px;}
+    .contact-list a{color:var(--gold); font-weight:700}
+    form{
+      background:white; color:var(--charcoal); border-radius:22px; padding:26px;
+      display:grid; gap:18px;
+    }
+    input, select, textarea{
+      width:100%; border:1px solid rgba(11,61,53,.15); border-radius:12px; padding:14px 16px; font-size:15px;
+    }
+    textarea{min-height:110px; resize:vertical;}
+    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+    .submit{
+      background: var(--gold); color: var(--charcoal); border:none; border-radius:999px;
+      padding:16px 20px; cursor:pointer; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px;
+    }
+    footer{
+      display:flex; justify-content:space-between; align-items:center; gap:20px;
+      padding:26px 7vw 55px; color:#40534f; font-size:14px;
+    }
+    .socials{display:flex; gap:18px; color:var(--emerald);}
+    @media (max-width: 820px){
+      .nav{display:none}
+      .hero{grid-template-columns:1fr; gap:30px;}
+      .hero-card{margin-left:0;}
+      .destinations{grid-template-columns:1fr;}
+      .tour{grid-template-columns:1fr; text-align:left;}
+      .about{grid-template-columns:1fr;}
+      .about img{border-radius:22px 22px 0 0; min-height:360px;}
+      .about-box{padding:0 24px 28px;}
+      .contact{grid-template-columns:1fr;}
+      .form-row{grid-template-columns:1fr;}
+      footer{flex-direction:column; align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">IKSHU TOURS & TRAVELS</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#tours">Tours</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/94774553892" class="button" target="_blank" rel="noreferrer">Plan my trip</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Private journeys • Sri Lanka</div>
+      <h1>Discover Sri Lanka with <span>Ikshu</span></h1>
+      <p>From misty highlands to golden beaches and cultural wonders, we design premium travel experiences that feel personal, memorable, and deeply connected to the island.</p>
+      <div class="hero-actions">
+        <a href="#tours" class="button primary">Explore tours</a>
+        <a href="#contact" class="button secondary">Ask for a custom plan</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="mini-title">Signature experience</div>
+      <h3>Luxury, local, unforgettable</h3>
+      <ul>
+        <li>Private tours & custom itineraries</li>
+        <li>Wildlife, beach, culture & heritage routes</li>
+        <li>Friendly local guidance and seamless travel</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="destinations">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" style="color:var(--teal)">Top places</div>
+        <h2>Destinations worth falling in love with</h2>
+      </div>
+      <p class="muted">Explore some of Sri Lanka’s most beautiful and meaningful places, from ancient cities to serene coasts.</p>
+    </div>
+
+    <div class="destinations">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Kandy">
+        <div class="card-body">
+          <div class="tag">Heritage</div>
+          <h3>Kandy</h3>
+          <p>Temple culture, scenic hills, and the heart of Sri Lankan tradition.</p>
+          <a class="link" href="#contact">Plan this route →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&q=80" alt="Mirissa">
+        <div class="card-body">
+          <div class="tag">Coast</div>
+          <h3>Mirissa</h3>
+          <p>Golden sand beaches, island sunsets, and slow coastal living.</p>
+          <a class="link" href="#contact">Plan this route →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Yala">
+        <div class="card-body">
+          <div class="tag">Wildlife</div>
+          <h3>Yala</h3>
+          <p>Wild elephants, open plains, and unforgettable safari moments.</p>
+          <a class="link" href="#contact">Plan this route →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="tours">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" style="color:var(--teal)">Journeys</div>
+        <h2>Handcrafted journeys for every kind of traveler</h2>
+      </div>
+      <p class="muted">Whether you want cultural discovery, beach relaxation, wildlife, or a full island experience, we tailor every itinerary around your style.</p>
+    </div>
+
+    <div class="tours">
+      <div class="tour">
+        <div class="tour-no">01</div>
+        <div>
+          <div class="tag">7 days • Culture & coast</div>
+          <h3>Sri Lanka Highlights</h3>
+          <p>Kandy • Sigiriya • Yala • Galle</p>
+        </div>
+        <a href="#contact" class="button primary">Customize</a>
+      </div>
+
+      <div class="tour">
+        <div class="tour-no">02</div>
+        <div>
+          <div class="tag">5 days • Beach escape</div>
+          <h3>Southern Coast Retreat</h3>
+          <p>Galle • Hikkaduwa • Mirissa</p>
+        </div>
+        <a href="#contact" class="button primary">Customize</a>
+      </div>
+
+      <div class="tour">
+        <div class="tour-no">03</div>
+        <div>
+          <div class="tag">6 days • Wildlife & nature</div>
+          <h3>Wild Sri Lanka</h3>
+          <p>Sigiriya • Udawalawe • Yala</p>
+        </div>
+        <a href="#contact" class="button primary">Customize</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Sri Lanka scenic landscape">
+      <div class="about-box">
+        <div class="eyebrow" style="color:var(--teal)">About us</div>
+        <h2>Travel with meaning, not hurry.</h2>
+        <p>Ikshu Tours & Travels invites travelers to experience Sri Lanka in a more personal, immersive way. We craft journeys that bring together culture, nature, scenic drives, warm hospitality, and the kind of moments that make a trip truly memorable.</p>
+        <div class="stats">
+          <div class="stat"><strong>9+</strong> destinations</div>
+          <div class="stat"><strong>Private</strong> tours</div>
+          <div class="stat"><strong>Custom</strong> plans</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <div class="eyebrow" style="color:var(--gold)">Let’s plan your trip</div>
+        <h2>Tell us what you dream of.</h2>
+        <p>We’ll help you turn your travel idea into a beautiful Sri Lanka experience, designed around your pace, budget, and interests.</p>
+        <div class="contact-list">
+          <a href="tel:+94774553892">Mobile: +94 77 455 3892</a>
+          <a href="mailto:cikshura@gmail.com">Email: cikshura@gmail.com</a>
+          <a href="https://wa.me/94774553892" target="_blank" rel="noreferrer">WhatsApp: +94 77 455 3892</a>
+          <a href="https://www.facebook.com/ikshura.jayathilake" target="_blank" rel="noreferrer">Facebook: Ikshura Jayathilake</a>
+        </div>
+      </div>
+
+      <form action="https://wa.me/94774553892" method="get" target="_blank" rel="noreferrer">
+        <div class="form-row">
+          <input type="text" name="text" placeholder="Your name" required />
+          <input type="email" name="text" placeholder="Your email" required />
+        </div>
+        <input type="text" name="text" placeholder="Destination or travel interest" />
+        <textarea name="text" placeholder="Tell us about your trip, dates, group size, and type of experience you want..."></textarea>
+        <button type="submit" class="submit">Send enquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand" style="color:var(--emerald)">IKSHU TOURS & TRAVELS</div>
+    <div class="socials">
+      <a href="https://wa.me/94774553892" target="_blank" rel="noreferrer">WhatsApp</a>
+      <a href="https://www.facebook.com/ikshura.jayathilake" target="_blank" rel="noreferrer">Facebook</a>
+    </div>
+  </footer>
+</body>
+</html>
