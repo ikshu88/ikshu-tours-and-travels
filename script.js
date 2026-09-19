@@ -1,4 +1,8 @@
-const toggle = document.querySelector(".menu-toggle");
+const whatsappMessage =
+  `Hello Ikshu Tours & Travels!\n\n` +
+  `My name is ${name}.\n` +
+  `I am interested in ${interest}.\n\n` +
+  `${message}`;const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 
 if (toggle && nav) {
